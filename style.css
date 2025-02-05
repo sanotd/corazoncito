@@ -1,0 +1,59 @@
+body { 
+    background-color: rgb(0, 0, 0); 
+    font-size: medium; 
+    margin: 0; 
+    padding: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center;    
+    align-items: center; 
+} 
+
+.heart {  
+    height: 70px; 
+    width: 70px; 
+    background-color: #f20044; 
+    position: relative; 
+    box-shadow: 10px 10px 90px rgba(242, 0, 68, 0.5); /* Añadido rgba para suavizar el color */
+    animation: animHeart 0.6s linear infinite; /* Corregido el nombre de la animación */
+} 
+
+@keyframes animHeart { 
+    0% {  
+        transform: rotate(-45deg) scale(1.07); /* Corregido el uso de scale */
+    } 
+     
+    80% { 
+        transform: rotate(-45deg) scale(1); 
+    } 
+   
+    100% { 
+        transform: rotate(-45deg) scale(0.8); /* Corregido el uso de scale */
+    } 
+} 
+
+.heart::before { 
+    content: ""; 
+    position: absolute; 
+    height: 70px; 
+    width: 70px; 
+    background-color: #f20044; 
+    box-shadow: -10px -10px 90px rgba(242, 0, 68, 0.5); /* Añadido rgba para suavizar el color */
+    top: -50%; 
+    border-radius: 50%; 
+} 
+
+.heart::after { 
+    content: ""; 
+    position: absolute; 
+    box-shadow: 10px -10px 90px rgba(242, 0, 68, 0.5); /* Añadido rgba para suavizar el color */
+    height: 70px; 
+    width: 70px; 
+    background-color: #f20044; 
+    right: -50%; 
+    border-radius: 50%; 
+} 
+
+h1 {
+   color: antiquewhite;
+}
